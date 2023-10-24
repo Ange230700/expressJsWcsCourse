@@ -34,14 +34,46 @@ const movies = [
         year: '1994',
         isInBlackAndWhite: false,
         duration: 180
+    },
+    {
+        id: 5,
+        title: 'The Dark Knight',
+        director: 'Christopher Nolan',
+        year: '2008',
+        isInBlackAndWhite: false,
+        duration: 180
     }
 ];
 
 const welcomeMessage = (request, response) => response
     .send('Welcome to my favourite movies list!');
-const getMovies = (request, response) => response
-    .status(200)
-    .json(movies);
+const getMovies = (request, response) => {
+    if (request.query.limit) {
+        if (request.query.isInBlackAndWhite) {
+            const blackAndWhiteMovies = movies.filter(movie => movie.isInBlackAndWhite === true);
+            const moviesToSend = blackAndWhiteMovies.slice(0, request.query.limit);
+            response
+                .status(200)
+                .json(moviesToSend)
+        } else {
+            const moviesToSend = movies.slice(0, request.query.limit);
+            response
+                .status(200)
+                .json(moviesToSend)
+        }
+    } else {
+        if (request.query.isInBlackAndWhite) {
+            const blackAndWhiteMovies = movies.filter(movie => movie.isInBlackAndWhite === true);
+            response
+                .status(200)
+                .json(blackAndWhiteMovies)
+        } else {
+            response
+                .status(200)
+                .json(movies)
+        }
+    }
+};
 const getMovieById = (request, response) => {
     const movieId = request.params.id;
     const movie = movies.find(movie => movie.id === parseInt(movieId));
