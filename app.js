@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const port = process.env.SERVER_PORT || 5000;
+require('dotenv').config();
+console.log(`The server will run on port ${process.env.SERVER_PORT}`);
+console.log(`The secret key is ${process.env.SECRET_KEY}`);
+console.log(`The server will be connected to database which user is ${process.env.DB_USER} and password is ${process.env.DB_PASSWORD}`);
+
 
 const movies = [
     {
