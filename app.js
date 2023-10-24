@@ -1,93 +1,60 @@
 const express = require('express');
 const app = express();
 const port = 5000;
-const handler = (request, response) => {
-    response.send('Validated');
-};
-const handler2 = (request, response) => {
-    response.status(404).send('Cannot find the requested page');
-};
-const handler3 = (request, response) => {
-    response.sendStatus(200);
-};
-const handler4 = (request, response) => {
-    response.json(
-        {
-            result: '10 items found'
-        }
-    );
-};
-const handler5 = (request, response) => {
-    response.end();
-};
-const welcomeName = (request, response) => response.send(
-    `Welcome ${request.params.name}`
-);
 
-const cocktails = [
+const movies = [
     {
         id: 1,
-        name: 'Mojito',
-        price: 8,
-        isAlcoholic: true
+        title: 'Citizen Kane',
+        director: 'Orson Wells',
+        year: '1941',
+        isInBlackAndWhite: true,
+        duration: 120
     },
     {
         id: 2,
-        name: 'Lemonade',
-        price: 5,
-        isAlcoholic: false
+        title: 'The Godfather',
+        director: "Francis Ford Coppola",
+        year: '1972',
+        isInBlackAndWhite: false,
+        duration: 180
     },
     {
         id: 3,
-        name: 'Long Island Ice Tea',
-        price: 12,
-        isAlcoholic: true
+        title: 'Pulp Fiction',
+        director: 'Quentin Tarantino',
+        year: '1994',
+        isInBlackAndWhite: false,
+        duration: 180
     },
     {
         id: 4,
-        name: 'Pina Colada',
-        price: 10,
-        isAlcoholic: true
-    },
-    {
-        id: 5,
-        name: 'Strawberry Daiquiri',
-        price: 11,
-        isAlcoholic: true
+        title: 'The Shawshank Redemption',
+        director: 'Frank Darabont',
+        year: '1994',
+        isInBlackAndWhite: false,
+        duration: 180
     }
 ];
 
-const getCocktails = (request, response) => response
+const welcomeMessage = (request, response) => response
+    .send('Welcome to my favourite movies list!');
+const getMovies = (request, response) => response
     .status(200)
-    .json(cocktails);
+    .json(movies);
+const getMovieById = (request, response) => {
+    const movieId = request.params.id;
+    const movie = movies.find(movie => movie.id === parseInt(movieId));
+    movie ? response
+        .status(200)
+        .json(movie) : response
+            .status(404)
+            .send('Not found')
+}
 
-app.get(
-    '/', handler
-);
-
-app.get(
-    '/handler2', handler2
-);
-
-app.get(
-    '/handler3', handler3
-);
-
-app.get(
-    '/handler4', handler4
-);
-
-app.get(
-    '/handler5', handler5
-);
-
-app.get(
-    '/users/:name', welcomeName
-);
-
-app.get(
-    '/api/cocktails', getCocktails
-)
+app.get('/', welcomeMessage);
+app.get('/api/movies', getMovies);
+app.get('/api/movies/:id', getMovieById);
 
 app.listen(
     port, (error) => error ? console.error(
