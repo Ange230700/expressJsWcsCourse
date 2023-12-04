@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2023-12-04T15:59:20.930Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="vMTHH8Qu8a8zufWYn-jx" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-04T17:33:55.378Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="-ubnQjX3ttutFBcQByzN" version="21.6.8" type="github">
   <diagram name="Page-1" id="ApjXHT1tceoJryDR3Xsl">
-    <mxGraphModel dx="997" dy="377" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1572" dy="942" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="eLAi6UlciBKFH_42NViC-5" value="avion" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;hachureGap=4;fontFamily=Helvetica;rounded=1;swimlaneLine=1;glass=0;shadow=0;labelBackgroundColor=none;" vertex="1" parent="1">
-          <mxGeometry x="613" y="1229" width="655" height="236" as="geometry" />
+          <mxGeometry x="354" y="1229" width="655" height="266" as="geometry" />
         </mxCell>
         <mxCell id="eLAi6UlciBKFH_42NViC-6" value="&lt;font face=&quot;Helvetica&quot;&gt;id INT NOT NULL PRIMARY KEY AUTO_INCREMENT&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;labelBackgroundColor=none;rounded=1;" vertex="1" parent="eLAi6UlciBKFH_42NViC-5">
           <mxGeometry y="26" width="655" height="30" as="geometry" />
@@ -27,6 +27,9 @@
         </mxCell>
         <mxCell id="eLAi6UlciBKFH_42NViC-12" value="&lt;font face=&quot;Helvetica&quot;&gt;date_revision DATE DEFAULT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-5">
           <mxGeometry y="206" width="655" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="eLAi6UlciBKFH_42NViC-39" value="&lt;font face=&quot;Helvetica&quot;&gt;type_id&amp;nbsp;INT NOT NULL&amp;nbsp;FOREIGN KEY REFERENCES type(id)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-5">
+          <mxGeometry y="236" width="655" height="30" as="geometry" />
         </mxCell>
         <mxCell id="eLAi6UlciBKFH_42NViC-13" value="pilote" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;hachureGap=4;fontFamily=Helvetica;rounded=1;swimlaneLine=1;glass=0;shadow=0;labelBackgroundColor=none;" vertex="1" parent="1">
           <mxGeometry x="2075" y="1635" width="655" height="206" as="geometry" />
@@ -64,10 +67,10 @@
         <mxCell id="eLAi6UlciBKFH_42NViC-25" value="&lt;font face=&quot;Helvetica&quot;&gt;nombre_de_passager INT DEFAULT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-21">
           <mxGeometry y="116" width="655" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-26" value="&lt;font face=&quot;Helvetica&quot;&gt;avion_id INT NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-21">
+        <mxCell id="eLAi6UlciBKFH_42NViC-26" value="&lt;font face=&quot;Helvetica&quot;&gt;avion_id INT NOT NULL FOREIGN KEY REFERENCES avion(id)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-21">
           <mxGeometry y="146" width="655" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-27" value="&lt;font face=&quot;Helvetica&quot;&gt;pilot_id INT NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-21">
+        <mxCell id="eLAi6UlciBKFH_42NViC-27" value="&lt;font face=&quot;Helvetica&quot;&gt;pilot_id INT NOT NULL&amp;nbsp;FOREIGN KEY REFERENCES pilot(id)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-21">
           <mxGeometry y="176" width="655" height="30" as="geometry" />
         </mxCell>
         <mxCell id="eLAi6UlciBKFH_42NViC-29" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="eLAi6UlciBKFH_42NViC-26" target="eLAi6UlciBKFH_42NViC-6">
@@ -90,28 +93,30 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="eLAi6UlciBKFH_42NViC-31" value="type" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;hachureGap=4;fontFamily=Helvetica;rounded=1;swimlaneLine=1;glass=0;shadow=0;labelBackgroundColor=none;" vertex="1" parent="1">
-          <mxGeometry x="405" y="1593" width="655" height="236" as="geometry" />
+          <mxGeometry x="398" y="1621" width="655" height="146" as="geometry" />
         </mxCell>
         <mxCell id="eLAi6UlciBKFH_42NViC-32" value="&lt;font face=&quot;Helvetica&quot;&gt;id INT NOT NULL PRIMARY KEY AUTO_INCREMENT&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;labelBackgroundColor=none;rounded=1;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
           <mxGeometry y="26" width="655" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-33" value="&lt;font face=&quot;Helvetica&quot;&gt;immatriculation_number VARCHAR(255) NOT NULL UNIQUE&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;labelBackgroundColor=none;rounded=1;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
+        <mxCell id="eLAi6UlciBKFH_42NViC-33" value="&lt;font face=&quot;Helvetica&quot;&gt;constructeur VARCHAR(255) NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;labelBackgroundColor=none;rounded=1;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
           <mxGeometry y="56" width="655" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-34" value="&lt;font face=&quot;Helvetica&quot;&gt;type VARCHAR(255) NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
+        <mxCell id="eLAi6UlciBKFH_42NViC-35" value="&lt;font face=&quot;Helvetica&quot;&gt;capacity INT NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
           <mxGeometry y="86" width="655" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-35" value="&lt;font face=&quot;Helvetica&quot;&gt;capacity INT NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
+        <mxCell id="eLAi6UlciBKFH_42NViC-36" value="&lt;font face=&quot;Helvetica&quot;&gt;radius INT NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
           <mxGeometry y="116" width="655" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-36" value="&lt;font face=&quot;Helvetica&quot;&gt;radius INT NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
-          <mxGeometry y="146" width="655" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-37" value="&lt;font face=&quot;Helvetica&quot;&gt;date_achat DATE NOT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
-          <mxGeometry y="176" width="655" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="eLAi6UlciBKFH_42NViC-38" value="&lt;font face=&quot;Helvetica&quot;&gt;date_revision DATE DEFAULT NULL&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=20;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;labelBackgroundColor=none;" vertex="1" parent="eLAi6UlciBKFH_42NViC-31">
-          <mxGeometry y="206" width="655" height="30" as="geometry" />
+        <mxCell id="eLAi6UlciBKFH_42NViC-40" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.367;exitY=-0.002;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="eLAi6UlciBKFH_42NViC-31" target="eLAi6UlciBKFH_42NViC-39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="785" y="1730" as="sourcePoint" />
+            <mxPoint x="537" y="1330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="641" y="1555" />
+              <mxPoint x="1087" y="1555" />
+              <mxPoint x="1091" y="1480" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
